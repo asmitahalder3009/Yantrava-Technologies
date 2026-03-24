@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yantrava Technologies</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #050505;
+    color: #fff;
+}
+
+/* NAVBAR */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 15px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+header img {
+    height: 55px;
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #ddd;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: gold;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 60px;
+    background: linear-gradient(to right, gold, #ffcc70);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    margin: 20px 0;
+    color: #aaa;
+    font-size: 18px;
+}
+
+.btn {
+    padding: 14px 30px;
+    background: linear-gradient(135deg, gold, orange);
+    border: none;
+    border-radius: 30px;
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* HERO IMAGE */
+.hero img {
+    width: 350px;
+    filter: drop-shadow(0 0 25px rgba(255,215,0,0.4));
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* glowing aura */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,215,0,0.3), transparent);
+    filter: blur(120px);
+    animation: glowMove 6s infinite alternate;
+}
+
+@keyframes glowMove {
+    from { transform: translate(-100px, -50px); }
+    to { transform: translate(100px, 50px); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 60px;
+    background: linear-gradient(to right, gold, orange);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero-buttons {
+    margin-top: 20px;
+}
+
+.whatsapp-btn {
+    margin-left: 10px;
+    background: #25D366;
+    color: #000;
+}
+/* SECTION */
+.section {
+    padding: 100px 80px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+/* SERVICES */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 25px;
+}
+
+.card {
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border: 1px solid gold;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: gold;
+}
+
+/* PORTFOLIO */
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 25px;
+}
+
+.project {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.project img {
+    width: 100%;
+    display: block;
+    transition: 0.4s;
+}
+
+.project:hover img {
+    transform: scale(1.1);
+}
+
+.project-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+}
+
+/* CTA */
+.cta {
+    text-align: center;
+    padding: 80px;
+    background: linear-gradient(135deg, #111, #000);
+}
+
+form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input, form textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: #111;
+    color: #fff;
+}
+
+form textarea {
+    height: 120px;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #000;
+    color: #777;
+}
+</style>
+</head>
+
+<body>
+
+<header id="header" style="
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:18px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(10,10,10,0.6);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,215,0,0.15);
+    z-index:1000;
+    transition:0.3s ease;
+">
+
+<!-- LOGO + TEXT -->
+<div style="display:flex; align-items:center; gap:12px;">
+
+    <!-- Logo Image -->
+    <img src="logo1.png" style="
+        height:65px;
+        width:auto;
+        object-fit:contain;
+    ">
+
+    <!-- Brand Text -->
+    <div style="line-height:1;">
+        <div style="
+            font-size:26px;
+            font-weight:700;
+            letter-spacing:1px;
+            background:linear-gradient(90deg,#FFD700,#FFA500);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+        ">
+            YANTRAVA
+        </div>
+
+        <div style="
+            font-size:12px;
+            letter-spacing:3px;
+            color:#aaa;
+            margin-top:2px;
+        ">
+            TECHNOLOGIES
+        </div>
+    </div>
+
+</div>
+
+    <!-- HAMBURGER -->
+    <div id="menuBtn" onclick="toggleMenu()" style="
+        display:none;
+        font-size:28px;
+        cursor:pointer;
+        color:gold;
+        transition:0.3s;
+    ">☰</div>
+
+    <!-- NAV -->
+    <nav id="navMenu" style="
+        display:flex;
+        align-items:center;
+        gap:35px;
+        transition:0.4s ease;
+    ">
+
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#portfolio" class="nav-link">Portfolio</a>
+        <a href="#contact" class="nav-link">Contact</a>
+
+        <!-- CTA -->
+        <a href="#contact" class="cta-btn">Get Quote</a>
+
+    </nav>
+
+</header>
+
+<style>
+
+/* NAV LINKS */
+.nav-link {
+    position:relative;
+    color:#aaa;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:500;
+    letter-spacing:0.5px;
+    transition:0.3s;
+}
+
+/* CENTER OUT UNDERLINE */
+.nav-link::after {
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:-6px;
+    width:0%;
+    height:2px;
+    background:linear-gradient(90deg,gold,orange);
+    transition:0.3s ease;
+    transform:translateX(-50%);
+}
+
+.nav-link:hover {
+    color:#fff;
+}
+
+.nav-link:hover::after {
+    width:100%;
+}
+
+/* ACTIVE */
+.nav-link.active {
+    color:gold;
+}
+
+.nav-link.active::after {
+    width:100%;
+}
+
+/* CTA BUTTON */
+.cta-btn {
+    padding:10px 22px;
+    border-radius:30px;
+    background:linear-gradient(135deg,gold,orange);
+    color:#000;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.cta-btn:hover {
+    box-shadow:0 0 15px gold;
+    transform:translateY(-2px);
+}
+
+/* HEADER SCROLL EFFECT */
+.scrolled {
+    padding:12px 40px !important;
+    background:rgba(0,0,0,0.85) !important;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    #menuBtn {
+        display:block !important;
+    }
+
+    #navMenu {
+        position:absolute;
+        top:80px;
+        right:0;
+        width:100%;
+        flex-direction:column;
+        background:rgba(0,0,0,0.95);
+        display:none;
+        padding:25px 0;
+        gap:20px;
+        animation:slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+        from {opacity:0; transform:translateY(-10px);}
+        to {opacity:1; transform:translateY(0);}
+    }
+}
+
+</style>
+
+<script>
+
+// TOGGLE MENU + ICON CHANGE
+function toggleMenu(){
+    let menu = document.getElementById("navMenu");
+    let btn = document.getElementById("menuBtn");
+
+    if(menu.style.display === "flex"){
+        menu.style.display = "none";
+        btn.innerHTML = "☰";
+    } else {
+        menu.style.display = "flex";
+        btn.innerHTML = "✕";
+    }
+}
+
+// ACTIVE LINK ON SCROLL
+let sections = document.querySelectorAll("section");
+let navLinks = document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll", () => {
+
+    // HEADER SHRINK
+    let header = document.getElementById("header");
+    if(window.scrollY > 50){
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
+
+    // ACTIVE SECTION
+    let current = "";
+
+    sections.forEach(sec => {
+        let top = sec.offsetTop - 120;
+        if(scrollY >= top){
+            current = sec.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        if(link.getAttribute("href") === "#" + current){
+            link.classList.add("active");
+        }
+    });
+});
+
+</script>
+
+<section id="hero">
+
+    <!-- VIDEO -->
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="video.mp4" type="video/mp4">
+    </video>
+
+    <!-- OVERLAY -->
+    <div class="overlay"></div>
+
+    <!-- GLOW -->
+    <div class="glow"></div>
+
+    <!-- CONTENT -->
+    <div class="hero-content">
+
+        <h1>Yantrava Technologies</h1>
+
+        <p id="sliderText"></p>
+
+        <div class="hero-buttons">
+            <button class="btn-premium" onclick="scrollToSection('portfolio')">
+                View Work
+            </button>
+            <button class="btn-whatsapp" onclick="sendWhatsApp()">
+                Chat on WhatsApp
+            </button>
+        </div>
+
+    </div>
+
+    <!-- LIQUID MORPHING WAVE -->
+    <div class="wave-container">
+        <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+            <path id="wavePath" fill="#000"></path>
+        </svg>
+    </div>
+
+</section>
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<style>
+
+#hero{
+    position:relative;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow:hidden;
+    background:#000;
+    font-family:'Poppins', sans-serif;
+}
+
+/* VIDEO */
+.bg-video{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    top:0;
+    left:0;
+}
+
+/* OVERLAY */
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+}
+
+/* GLOW */
+.glow{
+    position:absolute;
+    width:200%;
+    height:200%;
+    background:radial-gradient(circle at 30% 30%, rgba(255,215,0,0.15), transparent),
+               radial-gradient(circle at 70% 70%, rgba(255,140,0,0.15), transparent);
+    animation:bgMove 14s linear infinite;
+}
+
+/* CONTENT */
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+    padding:20px;
+    transition:transform 0.3s ease;
+}
+
+.hero-content h1{
+    font-size:clamp(36px, 8vw, 80px);
+    font-weight:800;
+    background:linear-gradient(to right, gold, orange);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+#sliderText{
+    margin-top:25px;
+    font-size:clamp(16px, 3vw, 28px);
+    color:#eee;
+    min-height:40px;
+}
+
+/* BUTTONS */
+.hero-buttons{
+    margin-top:45px;
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.btn-premium, .btn-whatsapp{
+    padding:16px 35px;
+    border:none;
+    border-radius:40px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn-premium{
+    background:linear-gradient(135deg, gold, orange);
+}
+
+.btn-whatsapp{
+    background:#25D366;
+}
+
+/* WAVE */
+.wave-container{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:140px;
+    z-index:2;
+}
+
+/* ANIMATIONS */
+@keyframes bgMove {
+    0% { transform:translate(0,0); }
+    100% { transform:translate(-25%, -25%); }
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .bg-video{ display:none; }
+    #hero{ background:url('fallback.jpg') center/cover no-repeat; }
+}
+
+</style>
+
+<script>
+
+/* =========================
+   LIQUID MORPHING WAVE
+========================= */
+
+const wave = document.getElementById("wavePath");
+
+function generateWave(offset = 0) {
+    let path = "M0,80 ";
+    for (let i = 0; i <= 1440; i += 120) {
+        let y = 80 + Math.sin((i + offset) * 0.01) * 40;
+        path += `L${i},${y} `;
+    }
+    path += "L1440,200 L0,200 Z";
+    return path;
+}
+
+let offset = 0;
+
+gsap.ticker.add(() => {
+    offset += 2;
+    wave.setAttribute("d", generateWave(offset));
+});
+
+
+/* =========================
+   SCROLL HERO SHRINK
+========================= */
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.to(".hero-content", {
+    scale: 0.75,
+    y: -100,
+    opacity: 0.6,
+    scrollTrigger: {
+        trigger: "#hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: true
+    }
+});
+
+
+/* =========================
+   TYPING EFFECT
+========================= */
+
+const texts = [
+    "Engineering premium digital experiences",
+    "Building scalable web & app solutions",
+    "Power. Precision. Performance.",
+    "Next-gen UI/UX for modern brands"
+];
+
+let i = 0, j = 0, current = "", isDeleting = false;
+
+function typeEffect() {
+    const el = document.getElementById("sliderText");
+
+    if (!isDeleting && j <= texts[i].length) {
+        current = texts[i].substring(0, j++);
+    } else {
+        current = texts[i].substring(0, j--);
+    }
+
+    el.innerHTML = current + '<span style="color:gold">|</span>';
+
+    let speed = isDeleting ? 40 : 80;
+
+    if (j === texts[i].length) {
+        speed = 1500;
+        isDeleting = true;
+    }
+
+    if (j === 0 && isDeleting) {
+        isDeleting = false;
+        i = (i + 1) % texts.length;
+    }
+
+    setTimeout(typeEffect, speed);
+}
+
+typeEffect();
+
+</script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<section id="services" style="
+    padding:80px 20px;
+    background: radial-gradient(circle at top left, rgba(255,215,0,0.08), transparent 40%),
+                radial-gradient(circle at bottom right, rgba(255,215,0,0.05), transparent 40%),
+                #050505;
+    color:#fff;
+    font-family:'Poppins',sans-serif;
+">
+
+<div class="container">
+    <h2 style="
+        text-align:center;
+        font-size:38px;
+        font-weight:700;
+        margin-bottom:50px;
+        background: linear-gradient(90deg,gold,#ffcc00);
+        -webkit-background-clip:text;
+        color:transparent;
+    ">Our Expertise</h2>
+
+    <table style="
+        width:100%;
+        border-collapse:separate;
+        border-spacing:0 20px;
+    ">
+
+        <!-- ROW -->
+        <tr>
+            <!-- CELL -->
+            <td style="width:50%; padding-right:15px;">
+                <div onclick="toggleBox(this)" style="
+                    cursor:pointer;
+                    padding:25px;
+                    border-radius:15px;
+                    background:rgba(255,255,255,0.06);
+                    backdrop-filter:blur(18px);
+                    border:1px solid rgba(255,255,255,0.08);
+                    transition:0.4s;
+                ">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <div style="display:flex; gap:15px;">
+                            <i class="fas fa-code" style="font-size:28px;color:gold;"></i>
+                            <div>
+                                <h5 style="color:gold; margin:0;">Web Engineering</h5>
+                                <small>Click to learn more</small>
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-down arrow" style="transition:0.3s;"></i>
+                    </div>
+
+                    <div class="expand" style="
+                        max-height:0;
+                        overflow:hidden;
+                        transition:0.4s ease;
+                        margin-top:10px;
+                        opacity:0;
+                    ">
+                        <p style="margin:10px 0 0;">
+Enterprise-grade web applications built for speed, scalability, and conversions.<br><br>
+<strong>Frontend:</strong> HTML5, CSS3, JavaScript, React, Next.js<br>
+<strong>Backend:</strong> PHP, Laravel, Node.js, Express<br>
+<strong>Capabilities:</strong> REST APIs, authentication systems, payment integrations, SEO optimization<br>
+<strong>Outcome:</strong> Fast-loading, secure, and conversion-focused websites
+</p>
+                    </div>
+                </div>
+            </td>
+
+            <!-- CELL -->
+            <td style="width:50%; padding-left:15px;">
+                <div onclick="toggleBox(this)" style="
+                    cursor:pointer;
+                    padding:25px;
+                    border-radius:15px;
+                    background:rgba(255,255,255,0.06);
+                    backdrop-filter:blur(18px);
+                    border:1px solid rgba(255,255,255,0.08);
+                    transition:0.4s;
+                ">
+                    <div style="display:flex; justify-content:space-between;">
+                        <div style="display:flex; gap:15px;">
+                            <i class="fas fa-mobile-alt" style="font-size:28px;color:gold;"></i>
+                            <div>
+                                <h5 style="color:gold; margin:0;">Mobile Apps</h5>
+                                <small>Click to learn more</small>
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-down arrow"></i>
+                    </div>
+
+                    <div class="expand" style="max-height:0; overflow:hidden; transition:0.4s; opacity:0;">
+                      <p style="margin-top:10px;">
+High-performance mobile applications designed for seamless user experience and scalability.<br><br>
+<strong>Technologies:</strong> Flutter, Kotlin, Java, React Native<br>
+<strong>Integrations:</strong> Firebase, push notifications, real-time databases<br>
+<strong>Features:</strong> Secure login, payment gateway, live tracking, API integration<br>
+<strong>Outcome:</strong> Reliable apps with smooth performance and high user retention
+</p>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+        <!-- ROW -->
+        <tr>
+            <td style="padding-right:15px;">
+                <div onclick="toggleBox(this)" style="
+                    cursor:pointer;
+                    padding:25px;
+                    border-radius:15px;
+                    background:rgba(255,255,255,0.06);
+                    backdrop-filter:blur(18px);
+                    border:1px solid rgba(255,255,255,0.08);
+                    transition:0.4s;
+                ">
+                    <div style="display:flex; justify-content:space-between;">
+                        <div style="display:flex; gap:15px;">
+                            <i class="fas fa-cogs" style="font-size:28px;color:gold;"></i>
+                            <div>
+                                <h5 style="color:gold; margin:0;">Custom Systems</h5>
+                                <small>Click to learn more</small>
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-down arrow"></i>
+                    </div>
+
+                    <div class="expand" style="max-height:0; overflow:hidden; transition:0.4s; opacity:0;">
+                        <p style="margin-top:10px;">
+Tailor-made digital systems that automate operations and drive business efficiency.<br><br>
+<strong>Solutions:</strong> MLM platforms, SaaS products, ERP, CRM systems<br>
+<strong>Integrations:</strong> Payment gateways, third-party APIs, automation workflows<br>
+<strong>Architecture:</strong> Scalable backend systems with secure data handling<br>
+<strong>Outcome:</strong> Reduced manual work, improved productivity, and scalable growth
+</p>
+                    </div>
+                </div>
+            </td>
+
+            <td style="padding-left:15px;">
+                <div onclick="toggleBox(this)" style="
+                    cursor:pointer;
+                    padding:25px;
+                    border-radius:15px;
+                    background:rgba(255,255,255,0.06);
+                    backdrop-filter:blur(18px);
+                    border:1px solid rgba(255,255,255,0.08);
+                    transition:0.4s;
+                ">
+                    <div style="display:flex; justify-content:space-between;">
+                        <div style="display:flex; gap:15px;">
+                            <i class="fas fa-palette" style="font-size:28px;color:gold;"></i>
+                            <div>
+                                <h5 style="color:gold; margin:0;">UI/UX Design</h5>
+                                <small>Click to learn more</small>
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-down arrow"></i>
+                    </div>
+
+                    <div class="expand" style="max-height:0; overflow:hidden; transition:0.4s; opacity:0;">
+                        <p style="margin-top:10px;">
+User-centric design focused on engagement, usability, and conversion optimization.<br><br>
+<strong>Tools:</strong> Figma, Adobe XD, Illustrator<br>
+<strong>Process:</strong> Wireframing, prototyping, usability testing<br>
+<strong>Focus:</strong> Mobile-first design, intuitive navigation, clean interfaces<br>
+<strong>Outcome:</strong> Visually appealing designs that increase user engagement and conversions
+</p>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+    </table>
+</div>
+</section>
+
+<script>
+function toggleBox(el){
+    const expand = el.querySelector(".expand");
+    const arrow = el.querySelector(".arrow");
+
+    if(expand.style.maxHeight && expand.style.maxHeight !== "0px"){
+        expand.style.maxHeight = "0";
+        expand.style.opacity = "0";
+        arrow.style.transform = "rotate(0deg)";
+    } else {
+        expand.style.maxHeight = expand.scrollHeight + "px";
+        expand.style.opacity = "1";
+        arrow.style.transform = "rotate(180deg)";
+    }
+}
+</script>
+
+<section id="work" style="
+    padding:80px 20px;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:#fff;
+    font-family:'Poppins',sans-serif;
+">
+
+<h2 style="text-align:center;font-size:38px;margin-bottom:50px;">
+    Some of Our Work
+</h2>
+
+<div id="projectsContainer" style="
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+    max-width:1200px;
+    margin:auto;
+">
+
+    <!-- PROJECT CARD -->
+    <div class="projectCard" style="
+        position:relative;
+        border-radius:20px;
+        overflow:hidden;
+        backdrop-filter:blur(20px);
+        background:rgba(255,255,255,0.05);
+        box-shadow:0 10px 40px rgba(0,0,0,0.4);
+        transition:0.4s;
+    ">
+        <iframe src="https://rootsandradiance.in/" style="
+            width:100%;
+            height:250px;
+            border:none;
+            pointer-events:auto;
+        "></iframe>
+
+        <div style="
+            position:absolute;
+            bottom:0;
+            width:100%;
+            padding:15px;
+            background:rgba(0,0,0,0.6);
+            backdrop-filter:blur(10px);
+            text-align:center;
+        ">Roots & Radiance</div>
+    </div>
+
+    <div class="projectCard" style="
+        position:relative;
+        border-radius:20px;
+        overflow:hidden;
+        backdrop-filter:blur(20px);
+        background:rgba(255,255,255,0.05);
+        box-shadow:0 10px 40px rgba(0,0,0,0.4);
+        transition:0.4s;
+    ">
+        <iframe src="https://thalamushospital.com/" style="width:100%;height:250px;border:none;"></iframe>
+        <div style="position:absolute;bottom:0;width:100%;padding:15px;background:rgba(0,0,0,0.6);text-align:center;">Thalamus Hospital</div>
+    </div>
+
+    <div class="projectCard" style="
+        position:relative;
+        border-radius:20px;
+        overflow:hidden;
+        backdrop-filter:blur(20px);
+        background:rgba(255,255,255,0.05);
+        box-shadow:0 10px 40px rgba(0,0,0,0.4);
+        transition:0.4s;
+    ">
+        <iframe src="https://arifaayurvedickuthir.com/" style="width:100%;height:250px;border:none;"></iframe>
+        <div style="position:absolute;bottom:0;width:100%;padding:15px;background:rgba(0,0,0,0.6);text-align:center;">Arifa Ayurvedic</div>
+    </div>
+
+</div>
+
+<!-- HIDDEN PROJECTS -->
+<div id="moreProjects" style="
+    display:none;
+    margin-top:30px;
+">
+
+<div style="
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+    max-width:1200px;
+    margin:auto;
+">
+
+    <script>
+        const projects = [
+            {url:'https://surakshabandhu.in/', name:'Suraksha Bandhu'},
+            {url:'https://www.anjanmajumdar.in/', name:'Anjan Majumdar'},
+            {url:'https://bearberry.co.in/', name:'Bearberry'},
+            {url:'https://www.royalbus.in/index.html', name:'Royal Bus'},
+            {url:'https://euphoriaclass.in/', name:'Euphoria Class'},
+            {url:'https://smrcoolingsolution.com/', name:'SMR Cooling'},
+            {url:'https://www.antibiotic.co.in/', name:'Antibiotic'}
+        ];
+
+        document.write(projects.map(p => `
+            <div style="
+                position:relative;
+                border-radius:20px;
+                overflow:hidden;
+                backdrop-filter:blur(20px);
+                background:rgba(255,255,255,0.05);
+                box-shadow:0 10px 40px rgba(0,0,0,0.4);
+                transition:0.4s;
+            ">
+                <iframe src="${p.url}" style="width:100%;height:250px;border:none;"></iframe>
+                <div style="position:absolute;bottom:0;width:100%;padding:15px;background:rgba(0,0,0,0.6);text-align:center;">
+                    ${p.name}
+                </div>
+            </div>
+        `).join(''));
+    </script>
+
+</div>
+
+<!-- CONTACT CTA -->
+<div style="text-align:center;margin-top:40px;">
+    <p style="font-size:18px;margin-bottom:20px;">
+        Want to see more projects or build something amazing?
+    </p>
+
+<button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="
+    padding:12px 30px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(45deg,#00c6ff,#0072ff);
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+">
+    Contact Us
+</button>
+</div>
+
+</div>
+
+<!-- VIEW MORE BUTTON -->
+<div style="text-align:center;margin-top:40px;">
+    <button id="viewMoreBtn" style="
+        padding:12px 40px;
+        border:none;
+        border-radius:30px;
+        background:linear-gradient(45deg,#ff6a00,#ee0979);
+        color:#fff;
+        font-size:16px;
+        cursor:pointer;
+        transition:0.3s;
+    ">
+        View More
+    </button>
+</div>
+
+</section>
+<script>
+function scrollToCTA(){
+const cta = document.getElementById("#contact");
+
+    cta.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
+</script>
+<script>
+document.getElementById("viewMoreBtn").addEventListener("click", function(){
+
+    const more = document.getElementById("moreProjects");
+
+    more.style.display = "block";
+    more.style.opacity = 0;
+    more.style.transform = "translateY(40px)";
+
+    setTimeout(()=>{
+        more.style.transition = "all 0.6s ease";
+        more.style.opacity = 1;
+        more.style.transform = "translateY(0)";
+    },100);
+
+    this.style.display = "none";
+
+    window.scrollTo({
+        top: more.offsetTop - 100,
+        behavior: "smooth"
+    });
+
+});
+</script>
+
+<style>
+.projectCard:hover{
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 20px 60px rgba(0,0,0,0.6);
+}
+</style>
+
+<!-- GOOGLE FONT + ICONS -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<section class="founder-section">
+
+    <!-- BACKGROUND GLOW -->
+    <div class="bg-blur"></div>
+
+    <div class="glass-container">
+
+        <!-- IMAGE -->
+        <div class="profile">
+            <img src="pro.jpg" alt="Asmita Halder">
+        </div>
+
+        <!-- CONTENT -->
+        <div class="info">
+            <h1>Hi, I'm <span>Asmita Halder</span></h1>
+
+            <h3 class="typing-text"></h3>
+
+            <p>
+                I’m a freelance full-stack developer focused on building high-performance websites,
+                scalable web applications, and modern digital experiences.
+                <br><br>
+                From idea to deployment, I help startups and businesses transform concepts into
+                fast, secure, and visually stunning products.
+            </p>
+
+            <!-- HIGHLIGHTS -->
+            <div class="highlights">
+                <div><i class="fas fa-code"></i> Clean Architecture</div>
+                <div><i class="fas fa-layer-group"></i> Full Stack Development</div>
+                <div><i class="fas fa-tachometer-alt"></i> Performance Optimized</div>
+                <div><i class="fas fa-lightbulb"></i> Startup Solutions</div>
+            </div>
+
+            <!-- CTA --><button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="
+    padding:12px 30px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(45deg,#00c6ff,#0072ff);
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+">
+    Start Your Project
+</button>
+        </div>
+    </div>
+</section>
+
+<!-- GSAP -->
+
+
+<script>
+// TYPING EFFECT
+const textArray = [
+    "Freelance Developer",
+    "Full Stack Engineer",
+    "UI/UX Focused Creator"
+];
+
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+(function type(){
+    if(count === textArray.length){
+        count = 0;
+    }
+    currentText = textArray[count];
+    letter = currentText.slice(0, ++index);
+
+    document.querySelector(".typing-text").textContent = letter;
+
+    if(letter.length === currentText.length){
+        setTimeout(() => {
+            index = 0;
+            count++;
+            type();
+        }, 1200);
+    } else {
+        setTimeout(type, 60);
+    }
+})();
+
+// GSAP ANIMATIONS
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(".glass-container", {
+    scrollTrigger:{
+        trigger:".glass-container",
+        start:"top 80%"
+    },
+    opacity:0,
+    y:80,
+    duration:1.2,
+    ease:"power4.out"
+});
+
+gsap.from(".profile img", {
+    scrollTrigger:{
+        trigger:".profile",
+        start:"top 85%"
+    },
+    scale:0,
+    duration:1,
+    ease:"back.out(1.7)"
+});
+
+gsap.from(".info > *", {
+    scrollTrigger:{
+        trigger:".info",
+        start:"top 85%"
+    },
+    opacity:0,
+    y:30,
+    stagger:0.2,
+    duration:0.8
+});
+</script>
+
+<style>
+/* SECTION */
+.founder-section {
+    position: relative;
+    padding: 120px 20px;
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+/* BACKGROUND GLASS EFFECT */
+.bg-blur {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #00f2fe55, transparent);
+    top: -100px;
+    left: -100px;
+    filter: blur(120px);
+}
+
+.bg-blur::after {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #4facfe55, transparent);
+    bottom: -200px;
+    right: -200px;
+    filter: blur(120px);
+}
+
+/* GLASS CARD */
+.glass-container {
+    backdrop-filter: blur(25px);
+    background: rgba(255,255,255,0.08);
+    border-radius: 25px;
+    padding: 50px;
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+}
+
+/* PROFILE IMAGE */
+.profile img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid rgba(255,255,255,0.3);
+}
+
+/* TEXT */
+.info {
+    color: #fff;
+}
+
+.info h1 {
+    font-size: 36px;
+}
+.info span {
+    color: #00f2fe;
+}
+
+.typing-text {
+    color: #00f2fe;
+    margin: 10px 0;
+    font-weight: 500;
+    min-height: 24px;
+}
+
+/* DESCRIPTION */
+.info p {
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* HIGHLIGHTS */
+.highlights {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 12px;
+    margin-top: 20px;
+}
+.highlights div {
+    background: rgba(255,255,255,0.1);
+    padding: 12px;
+    border-radius: 12px;
+}
+.highlights i {
+    margin-right: 8px;
+    color: #00f2fe;
+}
+
+/* BUTTON */
+.cta-btn {
+    margin-top: 25px;
+    padding: 14px 35px;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(45deg,#00f2fe,#4facfe);
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.cta-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .glass-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .highlights {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+
+<section style="
+    padding:100px 20px;
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    font-family:'Poppins',sans-serif;
+    color:#fff;
+">
+
+<div style="max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+
+    <!-- LEFT: FORM -->
+    <div style="
+        backdrop-filter: blur(20px);
+        background: rgba(255,255,255,0.05);
+        border-radius:20px;
+        padding:40px;
+        box-shadow:0 8px 32px rgba(0,0,0,0.3);
+    ">
+
+        <h2 style="margin-bottom:20px;">Start Your Project</h2>
+
+        <form style="display:flex;flex-direction:column;gap:15px;">
+            <input type="text" placeholder="Your Name" required style="padding:12px;border:none;border-radius:8px;background:#111;color:#fff;">
+            <input type="email" placeholder="Your Email" required style="padding:12px;border:none;border-radius:8px;background:#111;color:#fff;">
+            <input type="text" placeholder="Phone Number" required style="padding:12px;border:none;border-radius:8px;background:#111;color:#fff;">
+            <textarea placeholder="Project Details" style="padding:12px;border:none;border-radius:8px;background:#111;color:#fff;height:120px;"></textarea>
+
+            <button type="submit" style="
+                padding:12px;
+                border:none;
+                border-radius:10px;
+                background:linear-gradient(135deg,#00c6ff,#0072ff);
+                color:#fff;
+                cursor:pointer;
+            ">
+                Send Inquiry
+            </button>
+        </form>
+    </div>
+
+    <!-- RIGHT: CONTACT INFO -->
+    <div style="
+        backdrop-filter: blur(20px);
+        background: rgba(255,255,255,0.05);
+        border-radius:20px;
+        padding:30px;
+        box-shadow:0 8px 32px rgba(0,0,0,0.3);
+    ">
+
+        <h2 style="margin-bottom:20px;">Contact Us</h2>
+
+        <!-- PHONE -->
+        <p><i class="fa fa-phone"></i> +91 8334889694</p>
+
+        <!-- ADDRESS 1 -->
+        <p style="margin-top:20px;">
+            <i class="fa fa-location-dot"></i> 
+            <a href="https://share.google/PqmuzEoxWN93qZfqP" target="_blank" style="color:#00c6ff;text-decoration:none;">
+                Yantrava Technologies, New Barrackpur
+            </a>
+        </p>
+
+        <iframe 
+            src="https://maps.google.com/maps?q=New%20Barrackpur&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            style="width:100%;height:200px;border-radius:10px;border:none;margin-bottom:20px;">
+        </iframe>
+
+        <!-- ADDRESS 2 -->
+        <p>
+            <i class="fa fa-location-dot"></i> 
+            <a href="https://share.google/U21NzQk6PTjThfXYZp" target="_blank" style="color:#00c6ff;text-decoration:none;">
+                Yantrava Technologies, Jadavpur
+            </a>
+        </p>
+
+        <iframe 
+            src="https://maps.google.com/maps?q=Jadavpur&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            style="width:100%;height:200px;border-radius:10px;border:none;">
+        </iframe>
+
+        <!-- SOCIAL MEDIA -->
+        <div style="margin-top:25px;display:flex;gap:15px;font-size:20px;">
+
+            <a href="#" target="_blank" style="color:#fff;">
+                <i class="fab fa-youtube"></i>
+            </a>
+
+            <a href="#" target="_blank" style="color:#fff;">
+                <i class="fab fa-facebook"></i>
+            </a>
+
+            <a href="#" target="_blank" style="color:#fff;">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<div style="
+    text-align:center;
+    padding:20px;
+    background:#000;
+    color:#777;
+">
+    © 2024 Yantrava Technologies
+</div>
+
+<!-- RESPONSIVE -->
+<style>
+@media(max-width:900px){
+    section div{
+        grid-template-columns:1fr !important;
+    }
+}
+</style>
+
+<script>
+// smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+</script>
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 80 },
+    size: { value: 3 },
+    color: { value: "#FFD700" },
+    line_linked: {
+      enable: true,
+      color: "#FFD700",
+      opacity: 0.2
+    },
+    move: { speed: 2 }
+  }
+});
+</script>
+<script>
+function sendWhatsApp() {
+    let message = "Hello Yantrava Technologies, I want to discuss a project.";
+    let phone = "918334889694"; // replace with your number
+    let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+    window.open(url, "_blank");
+}
+</script>
+<script>
+document.getElementById("leadForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let message = document.getElementById("message").value;
+
+    let fullMessage = `New Lead:%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AMessage: ${message}`;
+
+    let whatsapp = "https://wa.me/918334889694?text=" + fullMessage;
+
+    window.open(whatsapp, "_blank");
+});
+</script>
+</body>
+</html>
