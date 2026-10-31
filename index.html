@@ -3,7 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yantrava Technologies | Software, Apps & Digital Engineering</title>
+  <title>Yantrava Technologies | Web, Software & Digital Marketing Services</title>
+  <meta name="description" content="Yantrava Technologies provides custom web development, Windows software, Meta advertising, logo design and video editing. Explore our work and contact our team." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#050508" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Yantrava Technologies | Software & Digital Solutions" />
+  <meta property="og:description" content="Custom websites, software, Meta advertising and creative services from Yantrava Technologies." />
+  <meta property="og:locale" content="en_IN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Yantrava Technologies" />
+  <meta name="twitter:description" content="Web development, Windows software and digital marketing services." />
+  <link rel="icon" href="logo.jpg" type="image/jpeg" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Yantrava Technologies","email":"yantravatechnologies@gmail.com","telephone":"+91-8334889694","logo":"logo.jpg","description":"Web application development, Windows software, digital marketing and creative design services.","contactPoint":{"@type":"ContactPoint","telephone":"+91-8334889694","contactType":"sales","availableLanguage":["English","Hindi","Bengali"]}}</script>
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -84,18 +96,44 @@
         linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
     }
+    html { scroll-padding-top: 5.5rem; }
+    body { min-width: 320px; }
+    img { max-width: 100%; }
+    .portfolio-item, .neon-card { min-width: 0; }
+    .portfolio-item a, button, nav a { touch-action: manipulation; }
+    :focus-visible { outline: 2px solid #FBBF24; outline-offset: 4px; }
+    @media (max-width: 639px) {
+      section[id] { scroll-margin-top: 4.5rem; }
+      section.py-24 { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+      .neon-card.p-8 { padding: 1.25rem; }
+      .perspective-frame { transform: none; }
+      .heroSwiper .swiper-slide > div { height: 260px; }
+      .heroSwiper h3 { font-size: 1.125rem; line-height: 1.4; }
+      #portfolioFilter { flex-wrap: nowrap; overflow-x: auto; padding-bottom: .5rem; scrollbar-width: thin; }
+      #portfolioFilter button { flex: 0 0 auto; min-height: 44px; }
+      #branchCard1 .flex.items-center.gap-3, #branchCard2 .flex.items-center.gap-3 { flex-wrap: wrap; }
+      #branchCard1 a, #branchCard2 a { min-height: 44px; justify-content: center; }
+      .fixed.bottom-6.right-6 { right: .75rem; bottom: .75rem; gap: .5rem; }
+      .fixed.bottom-6.right-6 a { width: 3rem; height: 3rem; }
+      #contact input, #contact textarea, #contact select { font-size: 16px; max-width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
   </style>
 </head>
 
 <body class="bg-brandDark text-slate-200 font-body antialiased overflow-x-hidden selection:bg-brandGold selection:text-black relative">
 
   <!-- Interactive Cyber Canvas Background -->
-  <canvas id="cyberCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
+  <canvas id="cyberCanvas" class="hidden md:block fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
 
+  <a href="#home" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-brandGold focus:text-black focus:p-3">Skip to content</a>
+  <main id="main-content">
   <!-- ================= TOP CONTACT BAR ================= -->
   <div class="relative z-50 bg-black/85 backdrop-blur-md border-b border-white/10 py-2.5 px-6 text-xs text-slate-400">
     <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
-      <div class="flex items-center space-x-6">
+      <div class="flex flex-wrap items-center gap-3 sm:gap-6">
         <a href="tel:8334889694" class="hover:text-brandGold transition flex items-center gap-2 font-medium">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
           <i class="fa-solid fa-phone text-brandGold"></i> +91 83348 89694
@@ -104,7 +142,7 @@
           <i class="fa-solid fa-envelope text-brandGold"></i> yantravatechnologies@gmail.com
         </a>
       </div>
-      <div class="flex items-center space-x-3 text-[11px] font-mono">
+      <div class="hidden sm:flex items-center space-x-3 text-[11px] font-mono">
         <a href="#locations" class="text-slate-300 hover:text-brandGold transition flex items-center gap-1.5">
           <i class="fa-solid fa-location-dot text-brandGold"></i> 2 Verified Branch Locations
         </a>
@@ -116,13 +154,13 @@
 
   <!-- ================= STICKY HEADER ================= -->
   <header class="sticky top-0 z-40 backdrop-blur-2xl bg-brandDark/90 border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
       
       <!-- Brand Logo -->
       <a href="#home" class="flex items-center gap-3.5 group">
         <div class="relative">
           <div class="absolute -inset-1 bg-gradient-to-r from-brandGold to-brandOrange rounded-full blur opacity-40 group-hover:opacity-100 transition duration-500"></div>
-          <img src="logo.jpg" alt="Yantrava Technologies Logo" class="relative h-12 w-auto object-contain drop-shadow-[0_0_12px_rgba(245,158,11,0.6)]" onerror="this.src='https://dummyimage.com/100x100/0c0d14/f59e0b&text=YT'"/>
+          <img src="logo.jpg" alt="Yantrava Technologies Logo" class="relative h-12 w-auto object-contain drop-shadow-[0_0_12px_rgba(245,158,11,0.6)]" onerror="this.src='https://dummyimage.com/100x100/0c0d14/f59e0b&text=YT'"/ decoding="async">
         </div>
         <div>
           <span class="text-xl sm:text-2xl font-heading font-extrabold tracking-wider text-white flex items-center gap-1.5">
@@ -133,7 +171,7 @@
       </a>
 
       <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center space-x-7 font-medium text-sm text-slate-300">
+      <nav aria-label="Main navigation" class="hidden md:flex items-center space-x-7 font-medium text-sm text-slate-300">
         <a href="#home" class="hover:text-brandGold transition">Home</a>
         <a href="#about" class="hover:text-brandGold transition">About Us</a>
         <a href="#services" class="hover:text-brandGold transition">Services</a>
@@ -152,13 +190,13 @@
       </div>
 
       <!-- Mobile Hamburger -->
-      <button id="mobileMenuBtn" class="md:hidden text-2xl text-slate-200 focus:outline-none">
+      <button id="mobileMenuBtn" type="button" aria-label="Open navigation menu" aria-controls="mobileMenu" aria-expanded="false" class="md:hidden min-w-11 min-h-11 text-2xl text-slate-200 focus:outline-none">
         <i class="fa-solid fa-bars-staggered"></i>
       </button>
     </div>
 
     <!-- Mobile Dropdown -->
-    <div id="mobileMenu" class="hidden md:hidden bg-cardDark border-b border-white/10 px-6 py-5 space-y-4 text-sm font-medium">
+    <div id="mobileMenu" aria-label="Mobile navigation" class="hidden md:hidden bg-cardDark border-b border-white/10 px-6 py-5 space-y-4 text-sm font-medium">
       <a href="#home" class="block hover:text-brandGold">Home</a>
       <a href="#about" class="block hover:text-brandGold">About Us</a>
       <a href="#services" class="block hover:text-brandGold">Services</a>
@@ -171,7 +209,7 @@
 
   <!-- ================= HERO SECTION ================= -->
   <section id="home" class="relative pt-12 pb-20 lg:pt-20 lg:pb-32 overflow-hidden hero-glow z-10">
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="grid lg:grid-cols-12 gap-12 items-center">
         
         <div class="lg:col-span-6 space-y-7 text-center lg:text-left">
@@ -180,7 +218,7 @@
             Software • Windows Apps • Meta Ads • Creatives
           </div>
           
-          <h1 class="text-4xl sm:text-6xl font-heading font-extrabold text-white leading-tight tracking-tight">
+          <h1 class="text-3xl min-[375px]:text-4xl sm:text-6xl font-heading font-extrabold text-white leading-tight tracking-tight">
             High-Performance <br/>
             <span class="gold-gradient-text">Software Engineering</span> <br/>
             & Digital Marketing.
@@ -190,7 +228,7 @@
             We architect robust web portals, native Windows desktop tools, viral Meta ad campaigns, brand logos, posters, and video production to scale your business.
           </p>
 
-          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-4 pt-2">
             <a href="#portfolio" class="px-8 py-4 rounded-xl bg-gradient-to-r from-brandGold to-brandOrange text-black font-heading font-bold shadow-[0_0_25px_rgba(245,158,11,0.4)] hover:brightness-110 hover:scale-105 transition flex items-center gap-3">
               <span>View 14+ Live Deployments</span>
               <i class="fa-solid fa-arrow-right-long text-sm"></i>
@@ -200,17 +238,17 @@
             </a>
           </div>
 
-          <div class="pt-6 grid grid-cols-3 gap-6 border-t border-white/10 max-w-md mx-auto lg:mx-0">
+          <div class="pt-6 grid grid-cols-3 gap-2 sm:gap-6 border-t border-white/10 max-w-md mx-auto lg:mx-0">
             <div>
-              <div class="text-3xl font-heading font-extrabold text-brandGold">14+</div>
+              <div class="text-2xl sm:text-3xl font-heading font-extrabold text-brandGold">14+</div>
               <div class="text-xs text-slate-400 font-medium">Live Projects</div>
             </div>
             <div>
-              <div class="text-3xl font-heading font-extrabold text-white">2</div>
+              <div class="text-2xl sm:text-3xl font-heading font-extrabold text-white">2</div>
               <div class="text-xs text-slate-400 font-medium">Active Branches</div>
             </div>
             <div>
-              <div class="text-3xl font-heading font-extrabold text-cyan-400">24/7</div>
+              <div class="text-2xl sm:text-3xl font-heading font-extrabold text-cyan-400">24/7</div>
               <div class="text-xs text-slate-400 font-medium">Direct Support</div>
             </div>
           </div>
@@ -239,7 +277,7 @@
               <div class="swiper-wrapper">
                 <div class="swiper-slide relative">
                   <div class="h-[360px] sm:h-[400px] overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover object-top" alt="Web Application Dashboard">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover object-top" alt="Web Application Dashboard" decoding="async">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-6">
                       <span class="text-xs font-mono font-bold uppercase tracking-wider text-brandGold">Enterprise Software</span>
                       <h3 class="text-2xl font-heading font-bold text-white">Full-Stack Cloud & Web Solutions</h3>
@@ -250,7 +288,7 @@
 
                 <div class="swiper-slide relative">
                   <div class="h-[360px] sm:h-[400px] overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover object-top" alt="Digital Meta Marketing">
+                    <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover object-top" alt="Digital Meta Marketing" decoding="async">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-6">
                       <span class="text-xs font-mono font-bold uppercase tracking-wider text-brandGold">Creative & Meta Marketing</span>
                       <h3 class="text-2xl font-heading font-bold text-white">Targeted Ads, Videos & Logo Design</h3>
@@ -261,7 +299,7 @@
 
                 <div class="swiper-slide relative">
                   <div class="h-[360px] sm:h-[400px] overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover object-top" alt="Windows Desktop Software">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover object-top" alt="Windows Desktop Software" decoding="async">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-6">
                       <span class="text-xs font-mono font-bold uppercase tracking-wider text-brandGold">Native Desktop Utilities</span>
                       <h3 class="text-2xl font-heading font-bold text-white">Windows .NET & Offline POS Tools</h3>
@@ -302,7 +340,7 @@
 
   <!-- ================= ABOUT SECTION ================= -->
   <section id="about" class="py-24 relative z-10">
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="grid lg:grid-cols-12 gap-12 items-center">
         
         <div class="lg:col-span-5 relative">
@@ -316,13 +354,13 @@
               Drawing strength from the precision and geometry of the Yantra, <strong class="text-white">Yantrava Technologies</strong> transforms complex business requirements into sleek web platforms, Windows apps, and revenue-generating Meta marketing.
             </p>
             <div class="space-y-3.5 text-sm text-slate-300 font-medium">
-              <div class="flex items-center gap-3">
+              <div class="flex flex-wrap items-center gap-3">
                 <i class="fa-solid fa-shield-halved text-brandGold text-base"></i> Full-Stack Web & Windows Software
               </div>
-              <div class="flex items-center gap-3">
+              <div class="flex flex-wrap items-center gap-3">
                 <i class="fa-solid fa-chart-line text-brandGold text-base"></i> ROI-Driven Meta Advertising & Retargeting
               </div>
-              <div class="flex items-center gap-3">
+              <div class="flex flex-wrap items-center gap-3">
                 <i class="fa-solid fa-palette text-brandGold text-base"></i> Commercial Brand Logos, Videos & Creative Posters
               </div>
             </div>
@@ -363,7 +401,7 @@
 
   <!-- ================= SERVICES SUITE ================= -->
   <section id="services" class="py-24 bg-cardDark/40 border-y border-white/5 relative z-10">
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
       
       <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
         <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandGold">// WHAT WE DELIVER</span>
@@ -470,7 +508,7 @@
 
   <!-- ================= LIVE CLIENT PORTFOLIO SHOWCASE ================= -->
   <section id="portfolio" class="py-24 relative z-10">
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
       
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
         <div>
@@ -487,12 +525,12 @@
         </div>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7" id="portfolioGrid">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7" id="portfolioGrid">
 
         <!-- Card 1: Hetre -->
         <div class="portfolio-item neon-card rounded-3xl overflow-hidden group" data-category="ecommerce">
           <div class="h-56 bg-slate-900 relative overflow-hidden">
-            <img src="https://image.thum.io/get/width/600/crop/800/https://hetre.in/" alt="Hetre Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy">
+            <img src="https://image.thum.io/get/width/600/crop/800/https://hetre.in/" alt="Hetre Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-cardDark via-transparent to-transparent"></div>
             <span class="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-mono font-bold text-brandGold uppercase tracking-wider border border-white/10">Lifestyle & E-Com</span>
           </div>
@@ -508,7 +546,7 @@
         <!-- Card 2: Roots and Radiance -->
         <div class="portfolio-item neon-card rounded-3xl overflow-hidden group" data-category="health">
           <div class="h-56 bg-slate-900 relative overflow-hidden">
-            <img src="https://image.thum.io/get/width/600/crop/800/https://rootsandradiance.in/" alt="Roots and Radiance Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy">
+            <img src="https://image.thum.io/get/width/600/crop/800/https://rootsandradiance.in/" alt="Roots and Radiance Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-cardDark via-transparent to-transparent"></div>
             <span class="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-mono font-bold text-brandGold uppercase tracking-wider border border-white/10">Skincare & Wellness</span>
           </div>
@@ -524,7 +562,7 @@
         <!-- Card 3: Thalamus Hospital -->
         <div class="portfolio-item neon-card rounded-3xl overflow-hidden group" data-category="health">
           <div class="h-56 bg-slate-900 relative overflow-hidden">
-            <img src="https://image.thum.io/get/width/600/crop/800/https://thalamushospital.com/" alt="Thalamus Hospital Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy">
+            <img src="https://image.thum.io/get/width/600/crop/800/https://thalamushospital.com/" alt="Thalamus Hospital Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-cardDark via-transparent to-transparent"></div>
             <span class="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-mono font-bold text-brandGold uppercase tracking-wider border border-white/10">Hospital & Healthcare</span>
           </div>
@@ -540,7 +578,7 @@
         <!-- Card 4: Anjan Majumdar -->
         <div class="portfolio-item neon-card rounded-3xl overflow-hidden group" data-category="corporate">
           <div class="h-56 bg-slate-900 relative overflow-hidden">
-            <img src="https://image.thum.io/get/width/600/crop/800/https://www.anjanmajumdar.in/" alt="Anjan Majumdar Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy">
+            <img src="https://image.thum.io/get/width/600/crop/800/https://www.anjanmajumdar.in/" alt="Anjan Majumdar Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-cardDark via-transparent to-transparent"></div>
             <span class="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-mono font-bold text-brandGold uppercase tracking-wider border border-white/10">Personal Portfolio</span>
           </div>
@@ -556,7 +594,7 @@
         <!-- Card 5: Botica Indica -->
         <div class="portfolio-item neon-card rounded-3xl overflow-hidden group" data-category="health">
           <div class="h-56 bg-slate-900 relative overflow-hidden">
-            <img src="https://image.thum.io/get/width/600/crop/800/https://boticaindica.com/" alt="Botica Indica Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy">
+            <img src="https://image.thum.io/get/width/600/crop/800/https://boticaindica.com/" alt="Botica Indica Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-cardDark via-transparent to-transparent"></div>
             <span class="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-mono font-bold text-brandGold uppercase tracking-wider border border-white/10">Pharma & Botany</span>
           </div>
@@ -572,7 +610,7 @@
         <!-- Card 6: Antibiotic.co.in -->
         <div class="portfolio-item neon-card rounded-3xl overflow-hidden group" data-category="health">
           <div class="h-56 bg-slate-900 relative overflow-hidden">
-            <img src="https://image.thum.io/get/width/600/crop/800/https://www.antibiotic.co.in/" alt="Antibiotic Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy">
+            <img src="https://image.thum.io/get/width/600/crop/800/https://www.antibiotic.co.in/" alt="Antibiotic Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-cardDark via-transparent to-transparent"></div>
             <span class="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-mono font-bold text-brandGold uppercase tracking-wider border border-white/10">Medical Resource</span>
           </div>
@@ -588,7 +626,7 @@
         <!-- Card 7: Royal Bus -->
         <div class="portfolio-item neon-card rounded-3xl overflow-hidden group" data-category="corporate">
           <div class="h-56 bg-slate-900 relative overflow-hidden">
-            <img src="https://image.thum.io/get/width/600/crop/800/https://www.royalbus.in/" alt="Royal Bus Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy">
+            <img src="https://image.thum.io/get/width/600/crop/800/https://www.royalbus.in/" alt="Royal Bus Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-cardDark via-transparent to-transparent"></div>
             <span class="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-mono font-bold text-brandGold uppercase tracking-wider border border-white/10">Travel & Logistics</span>
           </div>
@@ -604,7 +642,7 @@
         <!-- Card 8: SMR Cooling Solution -->
         <div class="portfolio-item neon-card rounded-3xl overflow-hidden group" data-category="corporate">
           <div class="h-56 bg-slate-900 relative overflow-hidden">
-            <img src="https://image.thum.io/get/width/600/crop/800/https://www.smrcoolingsolution.com/" alt="SMR Cooling Solution Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy">
+            <img src="https://image.thum.io/get/width/600/crop/800/https://www.smrcoolingsolution.com/" alt="SMR Cooling Solution Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-cardDark via-transparent to-transparent"></div>
             <span class="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-mono font-bold text-brandGold uppercase tracking-wider border border-white/10">Industrial HVAC</span>
           </div>
@@ -620,7 +658,7 @@
         <!-- Card 9: Arifa Ayurvedick Kuthir -->
         <div class="portfolio-item neon-card rounded-3xl overflow-hidden group" data-category="health">
           <div class="h-56 bg-slate-900 relative overflow-hidden">
-            <img src="https://image.thum.io/get/width/600/crop/800/https://www.arifaayurvedickuthir.com/" alt="Arifa Ayurvedick Kuthir Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy">
+            <img src="https://image.thum.io/get/width/600/crop/800/https://www.arifaayurvedickuthir.com/" alt="Arifa Ayurvedick Kuthir Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-cardDark via-transparent to-transparent"></div>
             <span class="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-mono font-bold text-brandGold uppercase tracking-wider border border-white/10">Traditional Ayurveda</span>
           </div>
@@ -636,7 +674,7 @@
         <!-- Card 10: Bearberry -->
         <div class="portfolio-item neon-card rounded-3xl overflow-hidden group" data-category="ecommerce">
           <div class="h-56 bg-slate-900 relative overflow-hidden">
-            <img src="https://image.thum.io/get/width/600/crop/800/https://bearberry.co.in/" alt="Bearberry Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy">
+            <img src="https://image.thum.io/get/width/600/crop/800/https://bearberry.co.in/" alt="Bearberry Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-cardDark via-transparent to-transparent"></div>
             <span class="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-mono font-bold text-brandGold uppercase tracking-wider border border-white/10">Fashion Apparel</span>
           </div>
@@ -652,7 +690,7 @@
         <!-- Card 11: Euphoria Class -->
         <div class="portfolio-item neon-card rounded-3xl overflow-hidden group" data-category="corporate">
           <div class="h-56 bg-slate-900 relative overflow-hidden">
-            <img src="https://image.thum.io/get/width/600/crop/800/https://euphoriaclass.in/" alt="Euphoria Class Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy">
+            <img src="https://image.thum.io/get/width/600/crop/800/https://euphoriaclass.in/" alt="Euphoria Class Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-cardDark via-transparent to-transparent"></div>
             <span class="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-mono font-bold text-brandGold uppercase tracking-wider border border-white/10">EdTech & Coaching</span>
           </div>
@@ -668,7 +706,7 @@
         <!-- Card 12: Suraksha Bandhu -->
         <div class="portfolio-item neon-card rounded-3xl overflow-hidden group" data-category="corporate">
           <div class="h-56 bg-slate-900 relative overflow-hidden">
-            <img src="https://image.thum.io/get/width/600/crop/800/https://surakshabandhu.in/" alt="Suraksha Bandhu Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy">
+            <img src="https://image.thum.io/get/width/600/crop/800/https://surakshabandhu.in/" alt="Suraksha Bandhu Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-cardDark via-transparent to-transparent"></div>
             <span class="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-mono font-bold text-brandGold uppercase tracking-wider border border-white/10">Security Services</span>
           </div>
@@ -684,7 +722,7 @@
         <!-- Card 13: Pipeline InvIT -->
         <div class="portfolio-item neon-card rounded-3xl overflow-hidden group" data-category="corporate">
           <div class="h-56 bg-slate-900 relative overflow-hidden">
-            <img src="https://image.thum.io/get/width/600/crop/800/https://pipelineinvit.com/" alt="Pipeline InvIT Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy">
+            <img src="https://image.thum.io/get/width/600/crop/800/https://pipelineinvit.com/" alt="Pipeline InvIT Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-cardDark via-transparent to-transparent"></div>
             <span class="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-mono font-bold text-brandGold uppercase tracking-wider border border-white/10">Energy & Infrastructure</span>
           </div>
@@ -700,7 +738,7 @@
         <!-- Card 14: Sarathi Tours -->
         <div class="portfolio-item neon-card rounded-3xl overflow-hidden group" data-category="corporate">
           <div class="h-56 bg-slate-900 relative overflow-hidden">
-            <img src="https://image.thum.io/get/width/600/crop/800/https://sarathitours.in/contact.php" alt="Sarathi Tours Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy">
+            <img src="https://image.thum.io/get/width/600/crop/800/https://sarathitours.in/contact.php" alt="Sarathi Tours Live Website Preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-cardDark via-transparent to-transparent"></div>
             <span class="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-mono font-bold text-brandGold uppercase tracking-wider border border-white/10">Tourism & Travel</span>
           </div>
@@ -720,7 +758,7 @@
 
   <!-- ================= ACCURATE OFFICE BRANCHES & MAP ================= -->
   <section id="locations" class="py-24 bg-cardDark/70 border-y border-white/10 relative z-10">
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
       
       <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
         <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandGold">// PHYSICAL PRESENCE</span>
@@ -757,7 +795,7 @@
               <span class="text-brandGold font-bold">Verified Google Link</span>
             </div>
 
-            <div class="flex items-center gap-3">
+            <div class="flex flex-wrap items-center gap-3">
               <a href="https://share.google/kbyaCg07R4trTLV4R" target="_blank" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-brandGold to-brandOrange text-black font-heading font-bold text-xs flex items-center gap-2 hover:brightness-110 transition shadow-md shadow-brandGold/20">
                 <i class="fa-solid fa-diamond-turn-right text-xs"></i> Open In Google Maps
               </a>
@@ -791,7 +829,7 @@
               <span class="text-cyan-400 font-bold">Verified Google Link</span>
             </div>
 
-            <div class="flex items-center gap-3">
+            <div class="flex flex-wrap items-center gap-3">
               <a href="https://share.google/3r1oTNXNhaZ9Fs1uP" target="_blank" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-brandGold hover:text-black text-white font-heading font-bold text-xs flex items-center gap-2 transition">
                 <i class="fa-solid fa-diamond-turn-right text-xs"></i> Open In Google Maps
               </a>
@@ -831,6 +869,8 @@
               <!-- Clean Responsive Interactive Google Map Frame -->
               <iframe 
                 id="mapFrame"
+                title="Yantrava Technologies branch location map"
+                loading="lazy"
                 src="https://maps.google.com/maps?q=Techno%20Main%20Salt%20Lake%20Kolkata&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                 class="w-full h-full border-0 filter contrast-125 saturate-150 transition duration-500" 
                 allowfullscreen="" 
@@ -873,7 +913,7 @@
 
   <!-- ================= CONTACT US SECTION ================= -->
   <section id="contact" class="py-24 bg-cardDark/90 border-t border-white/10 relative z-10">
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
       
       <div class="grid lg:grid-cols-12 gap-12">
         
@@ -968,11 +1008,12 @@
     </div>
   </section>
 
+  </main>
   <!-- ================= FOOTER ================= -->
   <footer class="bg-black py-12 border-t border-white/10 relative z-10">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
-      <div class="flex items-center gap-3">
-        <img src="logo.jpg" alt="Logo" class="h-9 w-auto" onerror="this.src='https://dummyimage.com/100x100/0c0d14/f59e0b&text=YT'"/>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex flex-wrap items-center gap-3">
+        <img src="logo.jpg" alt="Logo" class="h-9 w-auto" onerror="this.src='https://dummyimage.com/100x100/0c0d14/f59e0b&text=YT'"/ decoding="async">
         <span class="font-heading font-bold text-white text-base">Yantrava Technologies</span>
       </div>
       <div class="text-xs text-slate-500 text-center sm:text-right font-mono">
@@ -1050,12 +1091,12 @@
       });
       requestAnimationFrame(animateParticles);
     }
-    animateParticles();
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.innerWidth > 767) animateParticles();
 
     // 2. Swiper Initialization
     const swiper = new Swiper('.heroSwiper', {
       loop: true,
-      autoplay: {
+      autoplay: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? false : {
         delay: 3500,
         disableOnInteraction: false,
       },
@@ -1072,7 +1113,16 @@
     const mobileMenu = document.getElementById('mobileMenu');
     mobileMenuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
+      const expanded = !mobileMenu.classList.contains('hidden');
+      mobileMenuBtn.setAttribute('aria-expanded', String(expanded));
+      mobileMenuBtn.setAttribute('aria-label', expanded ? 'Close navigation menu' : 'Open navigation menu');
     });
+
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      mobileMenuBtn.setAttribute('aria-label', 'Open navigation menu');
+    }));
 
     // 4. Portfolio Category Filtering
     const filterBtns = document.querySelectorAll('.filter-btn');
